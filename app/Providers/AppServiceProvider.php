@@ -12,7 +12,12 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function register()
-    {
+	{
+
+		$this->app->bind(
+			\App\Contracts\HealthCheckContract::class,
+			\App\Repositories\HealthCheckRepository::class
+		);
         //
     }
 
